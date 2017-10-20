@@ -111,7 +111,7 @@ class visitor:
 
         if 'tid' in self.cookiedict.keys():
             weiboDOC.update({'tid':self.cookiedict['tid']},{'$set':{'cookiedict':self.cookiedict}},upsert=True)
-
+        self.mongoclient.close()
         self.session.close()
 
 
