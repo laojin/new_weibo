@@ -47,31 +47,27 @@ class master:
             conn.close()
 
     def REGISTER(self,conn,addr):
-        # _reply_data={
-        #     MSG_TYPE:STATUS_FINISH
-        # }
-        # reply_data=json.dumps(_reply_data)
-        # conn.sendall(reply_data)
-        # print '收到来自',addr,'的爬虫注册消息'
-        # data=''
-        # _data=conn.recv(1024)
-        # while not _data:
-        #     data+=_data
+
         data=self.recvmsg(conn=conn,addr=addr)
         data=json.loads(data)
         self.weibo_spider_clientDOC.insert(data)
+        conn.close()
 
-    def register(self):
-        while True:
-            while self.spider_status_list:
-                msg=self.spider_status_list.pop()
-                if msg[MSG_TYPE]==REGISTER:
-                    spider_info=msg['spider_info']
-                    self.weibo_spider_clientDOC.insert(spider_info)
-                elif msg[MSG_TYPE]==UNREGISTER:
-                    spider_info=msg['spider_info']
-                    self.weibo_spider_clientDOC.delete_many({'ip':spider_info['ip']})
-            time.sleep(1)
+    def UNREGISTER(self,conn,addr):
+        # while True:
+        #     while self.spider_status_list:
+        #         msg=self.spider_status_list.pop()
+        #         if msg[MSG_TYPE]==REGISTER:
+        #             spider_info=msg['spider_info']
+        #             self.weibo_spider_clientDOC.insert(spider_info)
+        #         elif msg[MSG_TYPE]==UNREGISTER:
+        #             spider_info=msg['spider_info']
+        #             self.weibo_spider_clientDOC.delete_many({'ip':spider_info['ip']})
+        #     time.sleep(1)
+        data = self.recvmsg(conn=conn, addr=addr)
+        data = json.loads(data)
+        # self.weibo_spider_clientDOC.delete_many()#应该是update
+        conn.close()
 
     def run(self):
         process1=process.Process(target=self.establish_listen,args=(40001,))
