@@ -1,6 +1,12 @@
+#_*_coding:utf-8_*_
 GET_TASK_URL='get_task_url'
 
 
+
+
+GET_VISITOR_INFO='GET_VISITOR_INFO'
+
+STATUS_FINISH='STATUS_FINISH'
 
 
 
@@ -56,3 +62,14 @@ ERROR 	= 'ERROR'
 
 # client id not found, then it needs to register itself
 ERR_NOT_FOUND	= 'ERR_NOT_FOUND'
+
+
+#自定义,主要用于master和server之间的交互,主要用于更新带爬取的数据队列.
+ADD_TASK_URL='add_task_url'
+
+MSG_RECV_OK="MSG_RECV_OK"
+
+
+
+def sendmsg(msg,conn,addr):
+    pass
