@@ -8,25 +8,39 @@ from multiprocessing import pool
 from protocol import *
 import Queue
 import json
+import random
 
 
 
 
 
 class server:
-    urllist=['www.{}.com'.format(str(i)) for i in range(10)]
+    # urllist=['http://www.mala.cn/forum-70-{}.html'.format(str(i)) for i in range(500)]
     def __init__(self):
-        self.host='127.0.0.1'
+        self.host='192.168.6.105'
+        self.master_ip='127.0.0.1'
+        self.master_data_port=40001
+
+        self.SEND_BACK_DATA_MSG = {
+            MSG_TYPE: SEND_BACK_DATA
+        }
+        self.ADD_TASK_URL_MSG={
+            MSG_TYPE:ADD_TASK_URL
+        }
+
+
+
+
         self.task_without_finish_queue=Queue.Queue(maxsize=1000)
         self.msg_need_to_send_to_master=Queue.Queue(maxsize=1000)
-        for url in self.urllist:
-            self.task_without_finish_queue.put(url)
+        # for url in self.urllist:
+        #     self.task_without_finish_queue.put(url)
 
 
     def socket_recv(self,socket_port):
         socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         socket1.bind((self.host, socket_port))
-        socket1.listen(5)
+        socket1.listen(20)
         print '已经进入监听进程里边了,正在监听端口: ',socket_port
         while True:
             conn,addr=socket1.accept()
@@ -36,16 +50,14 @@ class server:
         socket1.close()
 
 
-
-
     def start_newthreading(self,conn,addr):
-        data = conn.recv(1024)
+        data = self.recvmsg(conn=conn,addr=addr)
         data=json.loads(data)
         _msg_type=data[MSG_TYPE]
 
         #选择执行一个函数
         #可以用getattr函数来获得self中的相应的函数对象
-        if _msg_type=='get_task_url':
+        if _msg_type==GET_TASK_URL:
             thread1=threading.Thread(target=self.send_back_task,args=(conn,addr))
         elif _msg_type==REGISTER:
             thread1 =threading.Thread(target=self.register,args=(conn,addr))
@@ -55,28 +67,34 @@ class server:
             thread1 =threading.Thread(target=self.unregister,args=(conn,addr))
         elif _msg_type == GET_VISITOR_INFO:
             thread1 =threading.Thread(target=server.getVisitorInfo,args=(conn,addr))
+        elif _msg_type==ADD_TASK_URL:
+            thread1=threading.Thread(target=self)
+        elif _msg_type==SEND_BACK_DATA:
+            thread1=threading.Thread(target=self.SEND_BACK_DATA,args=(conn,addr))
         else:
             thread1 =threading.Thread(target=self.dealunkonwnmsg,args=(conn,addr))
         thread1.start()
         # thread1.join()
 
 
-
-
-
-
-
     #########以下这部分主要负责和client端交互
     def send_back_task(self,conn,addr):
+        if self.task_without_finish_queue.empty():
+            sock_get_task_from_master=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+            sock_get_task_from_master.connect((self.master_ip,self.master_data_port))
+            self.sendmsg(jsonMSG=json.dumps(self.ADD_TASK_URL_MSG),sock=sock_get_task_from_master)
+            data=self.recvmsg(sock=sock_get_task_from_master)
+            sock_get_task_from_master.close()
+            data=json.loads(data)
+            for task_url in data['task_url_list']:
+                self.task_without_finish_queue.put(task_url)
 
         url=self.task_without_finish_queue.get()
         _dict1={
-            'url':url
+            'task_url':url
         }
         _datajson=json.dumps(_dict1)
-        conn.sendall(_datajson)
-        data=conn.recv(1024)
-        print data
+        self.sendmsg(jsonMSG=_datajson,conn=conn)
         conn.close()
 
     def register(self,conn,addr):
@@ -89,11 +107,13 @@ class server:
         # data=conn.recv(1024)
         data=self.recvmsg(conn=conn,addr=addr)
         data=json.loads(data)
-        print '收到来自',addr,'的注册请求,并接收到数据:',data
+        print '收到来自',addr,'的注册请求,并接收到数据:',data,'试图发送给master'
+
         conn.close()
         dict2={
             MSG_TYPE:REGISTER,
         }
+        data['client_ip']=addr
         data3={
             'data':data
         }
@@ -103,26 +123,25 @@ class server:
             _socket.connect(('127.0.0.1',40001))
             _dict2=json.dumps(dict2)
             self.sendmsg(jsonMSG=_dict2,sock=_socket)
-            # print _dict2
-            # _socket.sendall(_dict2)
-            # _data2=_socket.recv(1024)
-            # print _data2
             _data3=json.dumps(data3)
-            # _data3=json.dumps(data3)
-            # print _data3
-            # _socket.sendall(_data3)
             self.sendmsg(jsonMSG=_data3,sock=_socket)
             _socket.close()
+            print '成功发送给了master'
         except Exception as e:
             print e
+            print '注册到master失败了'
 
     def heartbeat(self,conn,addr):
-        # data=conn.recv(1024)
-        data=self.recvmsg(conn=conn,addr=addr)
-        print data
-        data=json.loads(data)
-        print '收到来自',addr,'的心跳包,并接受到数据:\n',data
-        conn.close()
+        while True:
+            try:
+                data=self.recvmsg(conn=conn,addr=addr)
+                print data
+                data=json.loads(data)
+                print '收到来自',addr,'的心跳包,说明爬虫',data['spider_id'],'还是活着的'
+            except Exception as e:
+                print e,'没有收到来自',addr,'的心跳包,说明爬虫',data['spider_id'],'死了'
+                conn.close()
+                break
 
     def unregister(self,conn,addr):
         data=conn.recv(1024)
@@ -141,7 +160,27 @@ class server:
         print '收到来自',addr,'的一个为了获取用户信息的连接'
         conn.close
 
+    def SEND_BACK_DATA(self,conn,addr):
+        _data=self.recvmsg(conn=conn,addr=addr)
+        datajson=json.loads(_data)
+        timestr=str(int(time.time()))+str(random.randint(1,200))
+        try:
+            with open('F:/project/testFBS/mala/html_file/'+timestr,'w+') as fl:
+                json.dump(datajson,fl)
+        except Exception as e:
+            print e
+        conn.close()
+        if datajson[NEED_TO_SEND_MASTER]:
+            sock_to_master=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+            sock_to_master.connect((self.master_ip,self.master_data_port))
+            self.sendmsg(jsonMSG=json.dumps(self.SEND_BACK_DATA_MSG))#发送给服务器的
+            self.sendmsg(jsonMSG=json.dumps(datajson),sock=sock_to_master)
+            sock_to_master.close()
 
+    def SEND_CONTROL_CLIENT(self,conn=None,sock=None,addr=None,data_CONTROL=None):
+        pass
+
+    # def ADD_TASK_URL
 
     ##########以下这部分主要用于和master交互
 
@@ -220,13 +259,21 @@ class server:
 
     def run(self,portlist=None):
         portlist = [20001, 20002, 20003, 20004]
-        processlist = []
+        # processlist = []
+        # for socket2 in portlist:
+        #     process1 = process.Process(target=self.socket_recv, args=(socket2,))
+        #     process1.start()
+        #     processlist.append(process1)
+        # for process2 in processlist:
+        #     process2.join()
+
+        threadlist = []
         for socket2 in portlist:
-            process1 = process.Process(target=self.socket_recv, args=(socket2,))
-            process1.start()
-            processlist.append(process1)
-        for process2 in processlist:
-            process2.join()
+            thread1 = threading.Thread(target=self.socket_recv, args=(socket2,))
+            thread1.start()
+            threadlist.append(thread1)
+        for thread2 in threadlist:
+            thread2.join()
 
 
 

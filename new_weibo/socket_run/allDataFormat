@@ -1,0 +1,21 @@
+所有数据传送都用json格式传送,在self.sendmsg(jsonMSG=)的这个方法中，jsonMSG是值json.dumps()过后的数据。
+
+原始网页的数据解析应该在client端就解析，不然放到server端和master端都会对服务器带来巨大压力
+
+
+
+task_url_list_dict={
+            'task_url_list':[]#任务队列以数组的形式发送过去,master--------server
+        }
+
+task_url_dict={
+             'task_url':'url'#任务url用字典传送，因为将来可以发方便添加其它的字段而不影响现在的字段。
+}
+
+data_finish = json.dumps({
+            MSG_TYPE: STATUS_FINISH
+        })#每一次数据交互开始都会有的一段打招呼的用语,写在了函数中，一般不需要单独处理。
+
+data_stop_client={
+            MSG_TYPE:CLIENT_STOP
+}

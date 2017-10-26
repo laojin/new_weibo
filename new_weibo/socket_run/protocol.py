@@ -1,5 +1,5 @@
 #_*_coding:utf-8_*_
-GET_TASK_URL='get_task_url'
+GET_TASK_URL='GET_TASK_URL'
 
 
 
@@ -65,11 +65,13 @@ ERR_NOT_FOUND	= 'ERR_NOT_FOUND'
 
 
 #自定义,主要用于master和server之间的交互,主要用于更新带爬取的数据队列.
-ADD_TASK_URL='add_task_url'
+ADD_TASK_URL='ADD_TASK_URL'
 
 MSG_RECV_OK="MSG_RECV_OK"
 
+SEND_BACK_DATA="SEND_BACK_DATA"
+
+CLIENT_STOP="CLIENT_STOP"
 
 
-def sendmsg(msg,conn,addr):
-    pass
+NEED_TO_SEND_MASTER="NEED_SEND_TO_MASTER"
