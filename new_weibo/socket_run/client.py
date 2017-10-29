@@ -125,10 +125,14 @@ class client:
 
         while self.CONTROL_VARIABLE_LIVE:
             while not self.task_queue.empty():
+                #以后直接将队列传入，这样是否需要多线程，都可以在函数中定义。
                 task_dict=self.task_queue.get()
                 task_url=task_dict['task_url']
                 response=self.session.get(task_url)
                 response_text=response.text
+                #以上都在函数中处理
+
+
                 result=self.deal_response(response_text)
 
                 # yield result
@@ -160,6 +164,7 @@ class client:
             'client_id':self.client_id,
             'produce_time':datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             'url':url,
+            MSG_TYPE:None,
             NEED_TO_SEND_MASTER:need_send_to_master
         }
         socket1=socket.socket(socket.AF_INET,socket.SOCK_STREAM)

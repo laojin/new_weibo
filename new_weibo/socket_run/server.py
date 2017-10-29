@@ -170,7 +170,7 @@ class server:
         except Exception as e:
             print e
         conn.close()
-        if datajson[NEED_TO_SEND_MASTER]:
+        if datajson[NEED_TO_SEND_MASTER]:#与后边的与master交互函数配合，往master中推送消息。
             sock_to_master=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             sock_to_master.connect((self.master_ip,self.master_data_port))
             self.sendmsg(jsonMSG=json.dumps(self.SEND_BACK_DATA_MSG))#发送给服务器的
@@ -204,6 +204,11 @@ class server:
         conn.close()
 
     def send_msg_to_master(self):
+        #---------------------!
+        '''
+        这里需要一个队列，因为每一次收到一个客户端的消息，就于master建立一次连接，将来并发太高，会导致同时连接数太多。
+        :return:
+        '''
         socket3=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         socket3.bind((self.host,))
         # socket3.sendall(msg)

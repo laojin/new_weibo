@@ -50,6 +50,7 @@ class master:
 
 
 #以下的函数都是从server发送过来的，名称于serever上的这个函数方法名称一样
+
     def REGISTER(self,conn,addr):
 
         data=self.recvmsg(conn=conn,addr=addr)
@@ -89,12 +90,27 @@ class master:
     def SEND_BACK_DATA(self,conn,addr):#这个也是从server端接收到的，不是发送给其它客户端的。
         data=self.recvmsg(conn=conn,addr=addr)
         data=json.loads(data)
-        web_page_html=data['result']
+        self.deal_data_from_server(data=data)
+        #------------------------！
+        '''
+        这里应该使用队列，将结果暂存起来对它分析，看是否有可以更新任务的地方。
+        '''
+
+
+
+
+
         conn.close()
 
-    def deal_html_func(self,html_page):
-        datasoup=BeautifulSoup(html_page,'lxml')
-        print datasoup.select('')
+    def deal_data_from_server(self,data):
+        result=data['result']
+        type_str=data[MSG_TYPE]
+        if type_str==DATA_TYPE_SAVERESULT:
+            self.weibo_dataDOC.save(result)
+        elif type_str==DATA_TYPE_ADDTASKURL:
+            print '添加任务队列'
+        else:
+            print '位置的数据类型，未作任务处理'
 
 
 
@@ -115,7 +131,6 @@ class master:
         # process1.start()
         thread1 = threading.Thread(target=self.establish_listen, args=(40001,))
         thread1.start()
-
 
     def recvmsg(self,conn=None, sock=None, addr=None):
         s = conn if conn else sock

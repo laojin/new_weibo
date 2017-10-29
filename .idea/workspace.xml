@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74050ee9-5c29-4856-9f58-209d6d3b62d9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/new_weibo/other/test_yield.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/new_weibo/socket_run/allDataFormat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_weibo/socket_run/test_socket" afterPath="$PROJECT_DIR$/new_weibo/socket_run/test_socket" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/new_weibo.iml" afterPath="$PROJECT_DIR$/.idea/new_weibo.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/new_weibo/socket_run/spiderFunction/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/new_weibo/socket_run/spiderFunction/malashequ.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_weibo/other/test_twisted.py" afterPath="$PROJECT_DIR$/new_weibo/other/test_twisted.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_weibo/socket_run/client.py" afterPath="$PROJECT_DIR$/new_weibo/socket_run/client.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_weibo/socket_run/master.py" afterPath="$PROJECT_DIR$/new_weibo/socket_run/master.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_weibo/socket_run/protocol.py" afterPath="$PROJECT_DIR$/new_weibo/socket_run/protocol.py" />
@@ -24,10 +20,11 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/new_weibo$create_visitor.coverage" NAME="create_visitor Coverage Results" MODIFIED="1508487387342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/other" />
     <SUITE FILE_PATH="coverage/new_weibo$test.coverage" NAME="test Coverage Results" MODIFIED="1508834388629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/socket_run" />
+    <SUITE FILE_PATH="coverage/new_weibo$malashequ.coverage" NAME="malashequ Coverage Results" MODIFIED="1509314566574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/socket_run/spiderFunction" />
     <SUITE FILE_PATH="coverage/new_weibo$test_twisted.coverage" NAME="test_twisted Coverage Results" MODIFIED="1508913483080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/other" />
-    <SUITE FILE_PATH="coverage/new_weibo$server.coverage" NAME="server Coverage Results" MODIFIED="1509005104096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/socket_run" />
+    <SUITE FILE_PATH="coverage/new_weibo$server.coverage" NAME="server Coverage Results" MODIFIED="1509314591760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/socket_run" />
     <SUITE FILE_PATH="coverage/new_weibo$simulate_visitor.coverage" NAME="simulate_visitor Coverage Results" MODIFIED="1508726752208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/other" />
-    <SUITE FILE_PATH="coverage/new_weibo$master.coverage" NAME="master Coverage Results" MODIFIED="1509005047649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/socket_run" />
+    <SUITE FILE_PATH="coverage/new_weibo$master.coverage" NAME="master Coverage Results" MODIFIED="1509314585350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/socket_run" />
     <SUITE FILE_PATH="coverage/new_weibo$client.coverage" NAME="client Coverage Results" MODIFIED="1508986381785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/socket_run" />
     <SUITE FILE_PATH="coverage/new_weibo$test_yield.coverage" NAME="test_yield Coverage Results" MODIFIED="1508913485647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/new_weibo/other" />
   </component>
@@ -37,8 +34,8 @@
       <file leaf-file-name="protocol.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/protocol.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="67" column="12" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="12" />
+            <state relative-caret-position="537">
+              <caret line="82" column="42" lean-forward="false" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -47,16 +44,42 @@
       <file leaf-file-name="master.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/master.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="86" column="20" lean-forward="true" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+            <state relative-caret-position="289">
+              <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
               <folding>
                 <element signature="e#20#34#0" expanded="true" />
+                <element signature="e#242#779#0" expanded="false" />
                 <element signature="e#826#1065#0" expanded="false" />
-                <element signature="e#1603#1741#0" expanded="false" />
-                <element signature="e#1787#2450#0" expanded="false" />
-                <element signature="e#3115#3241#0" expanded="false" />
-                <element signature="e#3415#3512#0" expanded="false" />
+                <element signature="e#1119#1559#0" expanded="false" />
+                <element signature="e#1604#1742#0" expanded="false" />
+                <element signature="e#1788#2451#0" expanded="false" />
+                <element signature="e#2530#3036#0" expanded="false" />
+                <element signature="e#3722#3819#0" expanded="false" />
+                <element signature="e#3853#4064#0" expanded="false" />
+                <element signature="e#4129#4628#0" expanded="false" />
+                <element signature="e#4707#5306#0" expanded="false" />
+                <marker date="1509306696858" expanded="true" signature="4064:5306" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crawl_all.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new_weibo/spiders/crawl_all.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbserver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/dbserver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/allDataFormat">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
-              <caret line="2" column="54" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,18 +97,21 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="248" column="30" lean-forward="true" selection-start-line="248" selection-start-column="30" selection-end-line="248" selection-end-column="30" />
+            <state relative-caret-position="176">
+              <caret line="158" column="24" lean-forward="true" selection-start-line="158" selection-start-column="24" selection-end-line="158" selection-end-column="24" />
               <folding>
-                <element signature="e#20#33#0" expanded="true" />
                 <element signature="e#908#1274#0" expanded="false" />
+                <element signature="e#1329#2435#0" expanded="false" />
+                <element signature="e#2519#3299#0" expanded="false" />
                 <element signature="e#3343#4288#0" expanded="false" />
                 <element signature="e#4333#4712#0" expanded="false" />
                 <element signature="e#4758#4881#0" expanded="false" />
                 <element signature="e#4945#5070#0" expanded="false" />
                 <element signature="e#5120#5173#0" expanded="false" />
-                <element signature="e#6040#6044#0" expanded="false" />
-                <element signature="e#6164#6565#0" expanded="false" />
+                <element signature="e#6072#6076#0" expanded="false" />
+                <element signature="e#6196#6597#0" expanded="false" />
+                <element signature="e#6645#6810#0" expanded="false" />
+                <element signature="e#7785#8384#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,15 +120,10 @@
       <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+            <state relative-caret-position="259">
+              <caret line="166" column="25" lean-forward="false" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
               <folding>
-                <element signature="e#759#1563#0" expanded="false" />
-                <element signature="e#1598#2095#0" expanded="false" />
-                <element signature="e#2130#2812#0" expanded="false" />
-                <element signature="e#2852#3983#0" expanded="false" />
-                <element signature="e#4020#4184#0" expanded="false" />
-                <element signature="e#4262#4810#0" expanded="false" />
+                <element signature="e#20#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,7 +132,7 @@
       <file leaf-file-name="test_yield.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_weibo/other/test_yield.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-44">
+            <state relative-caret-position="286">
               <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -156,10 +177,11 @@
         <option value="$PROJECT_DIR$/new_weibo/other/test_yield.py" />
         <option value="$PROJECT_DIR$/new_weibo/other/test_twisted.py" />
         <option value="$PROJECT_DIR$/new_weibo/socket_run/test_socket" />
-        <option value="$PROJECT_DIR$/new_weibo/socket_run/protocol.py" />
-        <option value="$PROJECT_DIR$/new_weibo/socket_run/client.py" />
         <option value="$PROJECT_DIR$/new_weibo/socket_run/allDataFormat" />
         <option value="$PROJECT_DIR$/new_weibo/socket_run/server.py" />
+        <option value="$PROJECT_DIR$/new_weibo/socket_run/spiderFunction/malashequ.py" />
+        <option value="$PROJECT_DIR$/new_weibo/socket_run/client.py" />
+        <option value="$PROJECT_DIR$/new_weibo/socket_run/protocol.py" />
         <option value="$PROJECT_DIR$/new_weibo/socket_run/master.py" />
       </list>
     </option>
@@ -193,6 +215,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -233,7 +256,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="socket_run" />
+              <option name="myItemId" value="spiders" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -251,18 +274,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="other" />
+              <option name="myItemId" value="socket_run" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AiKaForum" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -277,7 +299,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.client">
+  <component name="RunManager" selected="Python.server">
     <configuration default="false" name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -335,25 +357,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="test_twisted" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/new_weibo/other" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="new_weibo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/new_weibo/other/test_twisted.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -368,6 +371,25 @@
       <module name="new_weibo" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/new_weibo/socket_run/client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="malashequ" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/new_weibo/socket_run/spiderFunction" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="new_weibo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/new_weibo/socket_run/spiderFunction/malashequ.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -533,16 +555,16 @@
       <item index="0" class="java.lang.String" itemvalue="Python.server" />
       <item index="1" class="java.lang.String" itemvalue="Python.master" />
       <item index="2" class="java.lang.String" itemvalue="Python.test_yield" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test_twisted" />
-      <item index="4" class="java.lang.String" itemvalue="Python.client" />
+      <item index="3" class="java.lang.String" itemvalue="Python.client" />
+      <item index="4" class="java.lang.String" itemvalue="Python.malashequ" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.server" />
         <item index="1" class="java.lang.String" itemvalue="Python.master" />
-        <item index="2" class="java.lang.String" itemvalue="Python.client" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test_yield" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test_twisted" />
+        <item index="2" class="java.lang.String" itemvalue="Python.malashequ" />
+        <item index="3" class="java.lang.String" itemvalue="Python.client" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test_yield" />
       </list>
     </recent_temporary>
   </component>
@@ -578,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508834544979</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="编写了分布式爬虫的服务端代码.增加master的代码，重新设计了recv函数和send函数，增加了数据完整性检测。">
+      <created>1509005350248</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1509005350248</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -592,19 +621,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3197492" sideWeight="0.50213444" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Redis Servers" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30802602" sideWeight="0.49786553" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30802602" sideWeight="0.49786553" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3304904" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3304904" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24200426" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23880596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38871473" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38828632" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -663,12 +693,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="42" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/new_weibo/other/test_twisted.py" />
     <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/server.py" />
     <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/client.py" />
     <entry file="file:///usr/lib/python2.7/multiprocessing/pool.py" />
@@ -875,15 +904,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new_weibo/sinacom.crt" />
-    <entry file="file://$PROJECT_DIR$/new_weibo/spiders/crawl_all.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/multiprocessing/pool.py" />
-    <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/dbserver.py" />
     <entry file="file:///usr/local/lib/python2.7/dist-packages/pymongo/topology.py" />
     <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/test.py" />
     <entry file="file://$PROJECT_DIR$/new_weibo/other/simulate_visitor.py">
@@ -933,7 +954,7 @@
     <entry file="file:///usr/lib/python2.7/socket.py" />
     <entry file="file://$PROJECT_DIR$/new_weibo/other/test_yield.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
+        <state relative-caret-position="286">
           <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -941,66 +962,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/protocol.py">
+    <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/spiderFunction/malashequ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="67" column="12" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/allDataFormat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="54" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/master.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="86" column="20" lean-forward="true" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+        <state relative-caret-position="154">
+          <caret line="7" column="59" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
           <folding>
-            <element signature="e#20#34#0" expanded="true" />
-            <element signature="e#826#1065#0" expanded="false" />
-            <element signature="e#1603#1741#0" expanded="false" />
-            <element signature="e#1787#2450#0" expanded="false" />
-            <element signature="e#3115#3241#0" expanded="false" />
-            <element signature="e#3415#3512#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+        <state relative-caret-position="259">
+          <caret line="166" column="25" lean-forward="false" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
           <folding>
-            <element signature="e#759#1563#0" expanded="false" />
-            <element signature="e#1598#2095#0" expanded="false" />
-            <element signature="e#2130#2812#0" expanded="false" />
-            <element signature="e#2852#3983#0" expanded="false" />
-            <element signature="e#4020#4184#0" expanded="false" />
-            <element signature="e#4262#4810#0" expanded="false" />
+            <element signature="e#20#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/allDataFormat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/dbserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_weibo/spiders/crawl_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/protocol.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="82" column="42" lean-forward="false" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/master.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+          <folding>
+            <element signature="e#20#34#0" expanded="true" />
+            <element signature="e#242#779#0" expanded="false" />
+            <element signature="e#826#1065#0" expanded="false" />
+            <element signature="e#1119#1559#0" expanded="false" />
+            <element signature="e#1604#1742#0" expanded="false" />
+            <element signature="e#1788#2451#0" expanded="false" />
+            <element signature="e#2530#3036#0" expanded="false" />
+            <element signature="e#3722#3819#0" expanded="false" />
+            <element signature="e#3853#4064#0" expanded="false" />
+            <element signature="e#4129#4628#0" expanded="false" />
+            <element signature="e#4707#5306#0" expanded="false" />
+            <marker date="1509306696858" expanded="true" signature="4064:5306" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new_weibo/socket_run/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="248" column="30" lean-forward="true" selection-start-line="248" selection-start-column="30" selection-end-line="248" selection-end-column="30" />
+        <state relative-caret-position="176">
+          <caret line="158" column="24" lean-forward="true" selection-start-line="158" selection-start-column="24" selection-end-line="158" selection-end-column="24" />
           <folding>
-            <element signature="e#20#33#0" expanded="true" />
             <element signature="e#908#1274#0" expanded="false" />
+            <element signature="e#1329#2435#0" expanded="false" />
+            <element signature="e#2519#3299#0" expanded="false" />
             <element signature="e#3343#4288#0" expanded="false" />
             <element signature="e#4333#4712#0" expanded="false" />
             <element signature="e#4758#4881#0" expanded="false" />
             <element signature="e#4945#5070#0" expanded="false" />
             <element signature="e#5120#5173#0" expanded="false" />
-            <element signature="e#6040#6044#0" expanded="false" />
-            <element signature="e#6164#6565#0" expanded="false" />
+            <element signature="e#6072#6076#0" expanded="false" />
+            <element signature="e#6196#6597#0" expanded="false" />
+            <element signature="e#6645#6810#0" expanded="false" />
+            <element signature="e#7785#8384#0" expanded="false" />
           </folding>
         </state>
       </provider>
